@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+
+<!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container-scroller">
+        <div class="container-fluid page-body-wrapper">
+            <%- include('siderbar'); %>
+            <div class="main-panel">
+                <div class="content-wrapper">
+                  <div class="row">
+       
+                      <div class="col-md-4 stretch-card grid-margin">
+                        <div class="card" style="width:200px">
+                          <img class="card-img-top" width="100px" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Card image">
+                          <div class="card-body">
+                            <h2 class="card-title font-weight-bold"> Tên :  <%= user.username %></h2>
+                            <p class="card-text"> Email :   <%= user.email %></p>
+                            <p class="card-text"> Tuổi : 
+                                <% if (locals.user.age) { %>
+                                    <%= user.age %>
+                                    <%} else { %>
+                                     Chưa cập nhật
+                                    <% } %>
+                            </p>
+                            <p class="card-text"> Giới tính : 
+                                <% if (locals.user.sex) { %>
+                                    <%= user.sex %>
+                                    <%} else { %>
+                                     Chưa cập nhật
+                                    <% } %>
+                            </p>
+                            <p class="card-text"> Địa chỉ : 
+                                <% if (locals.user.address) { %>
+                                    <%= user.address %>
+                                    <%} else { %>
+                                     Chưa cập nhật
+                                    <% } %>
+                            </p>
+                            <p class="card-text"> Sở thích : 
+                                <% if (locals.user.hobbies) { %>
+                                    <%= user.hobbies %>
+                                    <%} else { %>
+                                     Chưa cập nhật
+                                    <% } %>
+                            </p>
+                            <a href="/admin/editProfile?id=<%= user._id %>" class=""><button class="btn btn-primary"> Thêm thông tin</button></a>
+                        </div>
+                      </div>
+                  </div>
+            
+               </div>
+                    <!-- content-wrapper ends -->
+                    <!-- partial:partials/_footer.html -->
+                    <footer class="footer">
+                      <div class="container-fluid clearfix">
+                      
+                    </footer>
+                    <!-- partial -->
+                  </div>
+        </div>
+    </div>
+</body>
+</html>

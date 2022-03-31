@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        tinymce.init({
+          selector: '#mytextarea'
+        });
+      </script>
+<!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+
+<!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+  
+    <div class="container-scroller  bg-primary">
+        <div class="container-fluid page-body-wrapper  bg-primary">
+            <%- include('siderbar'); %>
+            <div class="main-panel  bg-primary">
+                <div class="content-wrapper  bg-primary">
+                    <form method="post" enctype="multipart/form-data" >
+                      <div class="form-group col-md-4">
+                        <label for="" >Tên </label>
+                        <input type="text" value="<%= user.username %>" class="form-control" name="username"  id="" >
+                      </div>
+
+                        <div class="form-group col-md-6">
+                            <label for=""> Email </label>
+                            <input  type="email" value="<%=user.email%>" class="form-control" name="email" id="">
+                        
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for=""> Tuổi </label>
+                            <input type="text" value="<%=user.age%>" class="form-control" name="age" id="">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for=""> Giới tính </label>
+                            <input type="text" value="<%=user.sex%>" class="form-control" name="sex" id="">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for=""> Địa chỉ </label>
+                            <input type="text" value="<%=user.address%>" class="form-control" name="address" id="">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for=""> Sở thích </label>
+                            <input type="text" value="<%=user.hobbies%>" class="form-control" name="hobbies" id="">
+                          </div>
+                         
+                          <div class="form-group col-md-6">
+                            <button  type="submit" class="btn btn-dark">Cập nhật</button>
+                     
+                          </div>
+                    
+                      </form>
+                      </div>           
+    </div>
+                    <!-- content-wrapper ends -->
+                    <!-- partial:partials/_footer.html -->
+                    <footer class="footer">
+                      <div class="container-fluid clearfix">
+                      
+                    </footer>
+                    <!-- partial -->
+                  </div>
+        </div>
+    </div>
+</body>
+</html>

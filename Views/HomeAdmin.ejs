@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+
+<!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container-scroller">
+        <div class="container-fluid page-body-wrapper">
+            <%- include('siderbar'); %>
+            <div class="main-panel">
+                <div class="content-wrapper">
+                  <h1>Số bài viết hiện có :  <%= post.length %></p> </h1>
+                  <div class="row">
+                    <%  post.forEach(post=>{%>
+                      <div class="col-md-4 stretch-card grid-margin">
+                        <div class="card" style="width:200px">
+                          <img class="card-img-top" width="100px" src="/img/<%= post.img %>" alt="Card image">
+                          <div class="card-body">
+                            <h2 class="card-title font-weight-bold">  <%= post.tittle %></h2>
+                            <p class="card-text">   <%= post.subtittle %></p>
+                            <p class="post-meta">Posted by
+                              <a href="#"><%= post.username %></a>
+                              on  <%= post.date.toDateString()%></p> 
+                              <p>Số lần cập nhật :  <%= post.updateDate.length%> </p>
+                              <p>Số lượt thích :  <%= post.like_count%> </p>
+                            <a href="admin/delete?id=<%= post._id %>" class=""><button class="btn btn-primary"> Xóa</button></a>
+                            <a href="admin/edit?id=<%= post._id %>" class=""><button class="btn btn-primary"> Chỉnh sữa </button></a>
+                          </div>
+                        </div>
+                      </div>
+                      <% }) ; %>
+                  </div>
+            
+               </div>
+                    <!-- content-wrapper ends -->
+                    <!-- partial:partials/_footer.html -->
+                    <footer class="footer">
+                      <div class="container-fluid clearfix">
+                      
+                    </footer>
+                    <!-- partial -->
+                  </div>
+        </div>
+    </div>
+</body>
+<script>
+
+</script>
+</html>
